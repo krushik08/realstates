@@ -1,117 +1,139 @@
-/**
-=========================================================
-* Argon Dashboard 2 PRO MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-pro-mui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-// prop-types is a library for typechecking of props
-import PropTypes from "prop-types";
-
 // @mui material components
-import Link from "@mui/material/Link";
-import Icon from "@mui/material/Icon";
+import Grid from "@mui/material/Grid";
 
 // Argon Dashboard 2 PRO MUI components
 import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
+import { Container, Stack, styled } from "@mui/material";
 
-// Argon Dashboard 2 PRO MUI base styles
-import typography from "assets/theme/base/typography";
+import FooterLogo from "../../assets/images/logos/Cottage-Company-Beige-1-4.png";
+import { Link } from "react-router-dom";
+import ArgonInput from "components/ArgonInput";
+import ArgonButton from "components/ArgonButton";
 
-function Footer({ company, links }) {
-  const { href, name } = company;
-  const { size } = typography;
+function Footer() {
+  const StyledFooter = styled(ArgonBox)(({ theme }) => ({
+    padding: theme.spacing(9, 0),
+    background: theme.palette.web.kelp,
+  }));
 
-  const renderLinks = () =>
-    links.map((link) => (
-      <ArgonBox key={link.name} component="li" px={2} lineHeight={1}>
-        <Link href={link.href} target="_blank">
-          <ArgonTypography variant="button" fontWeight="regular" color="text">
-            {link.name}
-          </ArgonTypography>
-        </Link>
-      </ArgonBox>
-    ));
+  const StyledFooterLogo = styled(ArgonBox)(({ theme }) => ({
+    height: "6.5rem",
+    marginBottom: "1.5rem",
+    maxWidth: "12.5rem",
+  }));
+
+  const StyledFooterLink = styled(Link)(({ theme }) => ({
+    color: theme.palette.web.cream,
+    ...theme.typography.body1,
+  }));
+
+  const StyledFooterNav = styled(ArgonBox)(({ theme }) => ({
+    display: "block",
+    columnCount: 2,
+  }));
+
+  const StyledFooterNavLink = styled(Link)(({ theme }) => ({
+    ...theme.typography.body1,
+    color: "#fff",
+    fontWeight: " 500",
+    display: "block",
+    padding: ".5rem 1rem",
+    transition:
+      "color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out",
+    ":hover": {
+      textDecoration: "underline !important",
+    },
+  }));
+
+  const StyledFooterNews = styled(ArgonTypography)(({ theme }) => ({
+    color: theme.palette.web.cream,
+    fontSize: "1.75rem",
+    fontWeight: 700,
+    lineHeight: 1.2,
+    marginBottom: "0.5rem",
+    marginTop: 0,
+  }));
+
+  const StyledFooterNewsTxt = styled(ArgonTypography)(({ theme }) => ({
+    color: theme.palette.web.cream,
+    marginBottom: theme.spacing(2),
+    ...theme.typography.body1,
+  }));
+
+  const StyledArgonInput = styled(ArgonInput)({
+    borderTopRightRadius: 0,
+    borderBottomRightRadius: 0,
+    borderTopLeftRadius: ".375rem",
+    borderBottomLeftRadius: ".375rem",
+  });
+
+  const StyledSubscribeButton = styled(ArgonButton)(({ theme }) => ({
+    borderTopLeftRadius: 0,
+    borderBottomLeftRadius: 0,
+    borderTopRightRadius: ".375rem",
+    borderBottomRightRadius: ".375rem",
+
+    background: theme.palette.web.cream,
+    ":hover": {
+      backgroundColor: "#e9e1d0",
+      color: "#1b271d",
+      transform: "translateY(0)",
+    },
+  }));
 
   return (
-    <ArgonBox
-      width="100%"
-      display="flex"
-      flexDirection={{ xs: "column", lg: "row" }}
-      justifyContent="space-between"
-      alignItems="center"
-      px={1.5}
-    >
-      <ArgonBox
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        flexWrap="wrap"
-        color="text"
-        fontSize={size.sm}
-        px={1.5}
-      >
-        &copy; {new Date().getFullYear()}, made with
-        <ArgonBox fontSize={size.md} color="text" mb={-0.5} mx={0.25}>
-          <Icon color="inherit" fontSize="inherit">
-            favorite
-          </Icon>
-        </ArgonBox>
-        by
-        <Link href={href} target="_blank">
-          <ArgonTypography variant="button" fontWeight="medium">
-            &nbsp;{name}&nbsp;
-          </ArgonTypography>
-        </Link>
-        for a better web.
-      </ArgonBox>
-      <ArgonBox
-        component="ul"
-        sx={({ breakpoints }) => ({
-          display: "flex",
-          flexWrap: "wrap",
-          alignItems: "center",
-          justifyContent: "center",
-          listStyle: "none",
-          mt: 3,
-          mb: 0,
-          p: 0,
+    <StyledFooter component="footer">
+      <Container>
+        <Grid
+          container
+          justifyContent="space-between"
+          alignItems={{ xs: "center", xl: "flex-start" }}
+          flexGrow={1}
+        >
+          <Grid item xs={12} md={6} xl={3}>
+            <Stack
+              direction="column"
+              alignItems={{ xs: "center", xl: "flex-start" }}
+            >
+              <StyledFooterLogo component="img" src={FooterLogo} />
+              <StyledFooterLink to="mailto:admin@thecottageco.com">
+                admin@thecottageco.com
+              </StyledFooterLink>
+            </Stack>
+          </Grid>
 
-          [breakpoints.up("lg")]: {
-            mt: 0,
-          },
-        })}
-      >
-        {renderLinks()}
-      </ArgonBox>
-    </ArgonBox>
+          <Grid item xl={4} display={{ xs: "none", xl: "block" }}>
+            <StyledFooterNav>
+              <StyledFooterNavLink to="#">Hoodies</StyledFooterNavLink>
+              <StyledFooterNavLink to="#">T-Shirts</StyledFooterNavLink>
+              <StyledFooterNavLink to="#">Youth</StyledFooterNavLink>
+              <StyledFooterNavLink to="#">Champion</StyledFooterNavLink>
+              <StyledFooterNavLink to="#">Canada </StyledFooterNavLink>
+              <StyledFooterNavLink to="#">Beach</StyledFooterNavLink>
+              <StyledFooterNavLink to="#">Grand Bend</StyledFooterNavLink>
+              <StyledFooterNavLink to="#">FawnIsland</StyledFooterNavLink>
+            </StyledFooterNav>
+          </Grid>
+
+          <Grid item xs={12} md={6} xl={4} mt={{ xs: 5, xl: 0 }}>
+            <Stack direction="column" textAlign={{ xs: "center", xl: "start" }}>
+              <StyledFooterNews>Newsletter</StyledFooterNews>
+              <StyledFooterNewsTxt>
+                No annoying emails, just discount codes.
+              </StyledFooterNewsTxt>
+              <ArgonBox>
+                <Stack direction="row">
+                  <StyledArgonInput type="email" placeholder="Email Address" />
+                  <StyledSubscribeButton>Subscribe </StyledSubscribeButton>
+                </Stack>{" "}
+              </ArgonBox>
+            </Stack>
+          </Grid>
+        </Grid>
+      </Container>
+    </StyledFooter>
   );
 }
-
-// Setting default values for the props of Footer
-Footer.defaultProps = {
-  company: { href: "https://www.creative-tim.com/", name: "Creative Tim" },
-  links: [
-    { href: "https://www.creative-tim.com/", name: "Creative Tim" },
-    { href: "https://www.creative-tim.com/presentation", name: "About Us" },
-    { href: "https://www.creative-tim.com/blog", name: "Blog" },
-    { href: "https://www.creative-tim.com/license", name: "License" },
-  ],
-};
-
-// Typechecking props for the Footer
-Footer.propTypes = {
-  company: PropTypes.objectOf(PropTypes.string),
-  links: PropTypes.arrayOf(PropTypes.object),
-};
 
 export default Footer;

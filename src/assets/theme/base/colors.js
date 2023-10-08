@@ -1,24 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 PRO MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-pro-mui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-/**
- * The base colors for the Argon Dashboard 2 PRO MUI.
- * You can add new color using this file.
- * You can customized the colors for the entire Argon Dashboard 2 PRO MUI using thie file.
- */
-
 const colors = {
   background: {
     default: "#f8f9fa",
@@ -309,6 +288,23 @@ const colors = {
 
   tabs: {
     indicator: { boxShadow: "#ddd" },
+  },
+
+  web: {
+    metal: "#202A1F",
+    kelp: "#314528",
+    log: "#1B271D",
+    sky: "#8BBECE",
+    cloud: "#D1DFE2",
+    cream: "#F1ECE1",
+    squash: "#c95b0c",
+    ghost: "#fbfbff",
+    fogra: "#040f16",
+    almostWhite: "#F1ECE1",
+    almostBlack: "#202A1F",
+    $primary: "#314528",
+    $secondary: "#8BBECE",
+    $primary10Hex: "#e6edef",
   },
 };
 

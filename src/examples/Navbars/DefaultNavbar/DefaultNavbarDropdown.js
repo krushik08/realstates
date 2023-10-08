@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Material Dashboard 2 PRO React - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-pro-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
@@ -20,12 +5,12 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 // @mui material components
-import Collapse from "@mui/material/Collapse";
 import Icon from "@mui/material/Icon";
 
 // Argon Dashboard 2 PRO MUI components
 import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
+import { useTheme } from "@mui/material";
 
 function DefaultNavbarDropdown({
   name,
@@ -38,12 +23,7 @@ function DefaultNavbarDropdown({
   collapse,
   ...rest
 }) {
-  const linkComponent = {
-    component: "a",
-    href,
-    target: "_blank",
-    rel: "noreferrer",
-  };
+  const theme = useTheme();
 
   const routeComponent = {
     component: Link,
@@ -54,45 +34,43 @@ function DefaultNavbarDropdown({
     <>
       <ArgonBox
         {...rest}
-        mx={0.5}
-        p={1}
         display="flex"
         alignItems="baseline"
-        color={light ? "white" : "dark"}
-        sx={{ cursor: "pointer", userSelect: "none" }}
+        sx={{
+          px: "0.5rem",
+          mr: "0.5rem",
+          cursor: "pointer",
+          userSelect: "none",
+        }}
         {...(route && routeComponent)}
-        {...(href && linkComponent)}
       >
-        {icon && (
-          <ArgonTypography
-            variant="body2"
-            lineHeight={1}
-            color="inherit"
-            sx={{ alignSelf: "center", "& *": { verticalAlign: "middle" } }}
-          >
-            {icon}
-          </ArgonTypography>
-        )}
         <ArgonTypography
           variant="button"
           fontWeight="regular"
           textTransform="capitalize"
-          color={light ? "white" : "dark"}
-          sx={{ fontWeight: "100%", ml: 1, mr: 0.25 }}
+          sx={{
+            fontWeight: "100%",
+            color: "rgba(0,0,0,.55)",
+            ...theme.typography.bodyFont,
+            letterSpacing: 0,
+            fontWeight: 500,
+          }}
         >
           {name}
         </ArgonTypography>
-        <ArgonTypography variant="body2" color={light ? "white" : "dark"} ml="auto">
-          <Icon sx={{ fontWeight: "normal", verticalAlign: "middle" }}>
-            {collapse && "keyboard_arrow_down"}
-          </Icon>
-        </ArgonTypography>
+        {collapse && (
+          <ArgonTypography variant="body2" ml="auto">
+            <Icon
+              sx={{
+                verticalAlign: "middle",
+                fontSize: "1rem !important",
+              }}
+            >
+              {collapse && "keyboard_arrow_down"}
+            </Icon>
+          </ArgonTypography>
+        )}
       </ArgonBox>
-      {children && (
-        <Collapse in={Boolean(collapseStatus)} timeout={400} unmountOnExit>
-          {children}
-        </Collapse>
-      )}
     </>
   );
 }

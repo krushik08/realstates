@@ -1,17 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 PRO MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-pro-mui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
 
 import { useEffect, useRef } from "react";
 
@@ -24,7 +10,7 @@ import Dropzone from "dropzone";
 // Dropzone styles
 import "dropzone/dist/dropzone.css";
 
-// Argon Dashboard 2 PRO MUI components
+// Argon  MUI components
 import ArgonBox from "components/ArgonBox";
 
 // Custom styles for the ArgonDropzone

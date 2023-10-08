@@ -1,34 +1,14 @@
-/**
-=========================================================
-* Argon Dashboard 2 PRO MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-pro-mui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-/**
- * The base typography styles for the Argon Dashboard 2 PRO MUI.
- * You can add new typography style using this file.
- * You can customized the typography styles for the entire Argon Dashboard 2 PRO MUI using thie file.
- */
-
-// Argon Dashboard 2 PRO MUI Base Styles
+// Argon  MUI Base Styles
 import colors from "assets/theme-dark/base/colors";
 
-// Argon Dashboard 2 PRO MUI Helper Functions
+// Argon  MUI Helper Functions
 import pxToRem from "assets/theme-dark/functions/pxToRem";
 
 const { dark } = colors;
 
 const baseProperties = {
-  fontFamily: '"Open Sans", "Helvetica", "Arial", sans-serif',
+  // fontFamily: "gelica, system-ui, -apple-system, Segoi UI, Roboto",
+  fontFamily: "gelica",
   fontWeightLight: 300,
   fontWeightRegular: 400,
   fontWeightMedium: 600,
@@ -45,13 +25,6 @@ const baseHeadingProperties = {
   fontFamily: baseProperties.fontFamily,
   color: dark.main,
   fontWeight: baseProperties.fontWeightMedium,
-};
-
-const baseDisplayProperties = {
-  fontFamily: baseProperties.fontFamily,
-  color: dark.main,
-  fontWeight: baseProperties.fontWeightLight,
-  lineHeight: 1.2,
 };
 
 const typography = {
@@ -142,36 +115,6 @@ const typography = {
 
   overline: {
     fontFamily: baseProperties.fontFamily,
-  },
-
-  d1: {
-    fontSize: pxToRem(80),
-    ...baseDisplayProperties,
-  },
-
-  d2: {
-    fontSize: pxToRem(72),
-    ...baseDisplayProperties,
-  },
-
-  d3: {
-    fontSize: pxToRem(64),
-    ...baseDisplayProperties,
-  },
-
-  d4: {
-    fontSize: pxToRem(56),
-    ...baseDisplayProperties,
-  },
-
-  d5: {
-    fontSize: pxToRem(48),
-    ...baseDisplayProperties,
-  },
-
-  d6: {
-    fontSize: pxToRem(40),
-    ...baseDisplayProperties,
   },
 
   size: {

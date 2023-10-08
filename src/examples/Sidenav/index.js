@@ -22,7 +22,6 @@ import ArgonTypography from "components/ArgonTypography";
 import SidenavCollapse from "examples/Sidenav/SidenavCollapse";
 import SidenavList from "examples/Sidenav/SidenavList";
 import SidenavItem from "examples/Sidenav/SidenavItem";
-import SidenavFooter from "examples/Sidenav/SidenavFooter";
 
 // Custom styles for the Sidenav
 import SidenavRoot from "examples/Sidenav/SidenavRoot";
@@ -151,7 +150,11 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
               icon={icon}
               active={key === collapseName}
               open={openCollapse === key}
-              onClick={() => (openCollapse === key ? setOpenCollapse(false) : setOpenCollapse(key))}
+              onClick={() =>
+                openCollapse === key
+                  ? setOpenCollapse(false)
+                  : setOpenCollapse(key)
+              }
             >
               {collapse ? renderCollapse(collapse) : null}
             </SidenavCollapse>
@@ -184,7 +187,11 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
   );
 
   return (
-    <SidenavRoot {...rest} variant="permanent" ownerState={{ darkSidenav, miniSidenav, layout }}>
+    <SidenavRoot
+      {...rest}
+      variant="permanent"
+      ownerState={{ darkSidenav, miniSidenav, layout }}
+    >
       <ArgonBox pt={3} pb={1} px={4} textAlign="center">
         <ArgonBox
           display={{ xs: "block", xl: "none" }}
@@ -201,7 +208,13 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
         </ArgonBox>
         <ArgonBox component={NavLink} to="/" display="flex" alignItems="center">
           {brand && (
-            <ArgonBox component="img" src={brand} alt="Argon Logo" width="2rem" mr={0.25} />
+            <ArgonBox
+              component="img"
+              src={brand}
+              alt="Argon Logo"
+              width="2rem"
+              mr={0.25}
+            />
           )}
           <ArgonBox
             width={!brandName && "100%"}
@@ -220,10 +233,6 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
       </ArgonBox>
       <Divider light={darkSidenav} />
       <List>{renderRoutes}</List>
-
-      <ArgonBox pt={1} mt="auto" mb={2} mx={2}>
-        <SidenavFooter />
-      </ArgonBox>
     </SidenavRoot>
   );
 }
@@ -240,6 +249,9 @@ Sidenav.propTypes = {
   brand: PropTypes.string,
   brandName: PropTypes.string.isRequired,
   routes: PropTypes.arrayOf(PropTypes.object).isRequired,
+
+
+  
 };
 
 export default Sidenav;

@@ -27,9 +27,8 @@ import ArgonBox from "components/ArgonBox";
 // Argon Dashboard 2 PRO MUI context
 import { useArgonController, setLayout } from "context";
 
-function PageLayout({ background, children }) {
+function PageLayout({  children }) {
   const [controller, dispatch] = useArgonController();
-  const { darkMode } = controller;
 
   const { pathname } = useLocation();
 
@@ -42,7 +41,6 @@ function PageLayout({ background, children }) {
       width="100vw"
       height="100%"
       minHeight="100vh"
-      bgColor={darkMode ? "transparent" : background}
       sx={{ overflowX: "hidden" }}
     >
       {children}

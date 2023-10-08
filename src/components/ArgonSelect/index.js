@@ -1,17 +1,4 @@
-/**
-=========================================================
-* Argon Dashboard 2 PRO MUI - v3.0.0
-=========================================================
 
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-pro-mui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
 
 import { forwardRef } from "react";
 
@@ -21,10 +8,10 @@ import PropTypes from "prop-types";
 // react-select components
 import Select from "react-select";
 
-// Argon Dashboard 2 PRO MUI base styles
+// Argon  MUI base styles
 import colors from "assets/theme/base/colors";
 
-// Argon Dashboard 2 PRO MUI context
+// Argon  MUI context
 import { useArgonController } from "context";
 
 // Custom styles for ArgonSelect
