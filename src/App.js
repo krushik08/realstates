@@ -1,16 +1,16 @@
-// react-router components
-import { CssBaseline, ThemeProvider } from "@mui/material";
-import theme from "assets/theme";
-import BasicLayout from "examples/LayoutContainers/BasicLayout";
-import Home from "layouts/home";
+import React from 'react';
+import MinimalLayout from './layout/MinimalLayout';
 
-export default function App() {
+import Home from './page/home';
+
+const App = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <BasicLayout>
+    <>
+      <MinimalLayout>
         <Home />
-      </BasicLayout>
-    </ThemeProvider>
+      </MinimalLayout>
+    </>
   );
-}
+};
+
+export default App;
