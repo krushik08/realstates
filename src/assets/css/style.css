@@ -17088,3 +17088,14 @@ div.wpforms-container form .wpforms-submit-container .hero-general .content-col 
         display: none !important;
     }
 }
+/* Custom */
+
+.communities-wrapper {
+    margin: 0;
+    list-style: none;
+}
+
+.communities-wrapper li {
+    padding: 0 3px 4px 3px;
+    list-style: none;
+}

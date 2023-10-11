@@ -17,13 +17,15 @@ import MuiLink from '@mui/material/Link';
 import Container from '@mui/material/Container';
 
 import BrandLogo from './../../../assets/images/Cottage-Company-Green-2.png';
-import { Box, Typography, styled, useTheme } from '@mui/material';
+import { Box, Button, Typography, styled, useTheme } from '@mui/material';
 import DefaultNavbarDropdown from './DefaultNavbarDropdown';
 import DefaultNavbarMobile from './DefaultNavbarMobile';
 import breakpoints from '../../../theme/breakpoints';
-
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import SearchIcon from '@mui/icons-material/Search';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 function DefaultNavbar({ routes, brand, transparent, light, action }) {
   const theme = useTheme();
@@ -214,7 +216,6 @@ function DefaultNavbar({ routes, brand, transparent, light, action }) {
               <Link to="/" className="navbar-brand">
                 <Box component="img" src={BrandLogo} />
               </Link>
-
               {/*  */}
               <Box
                 className="open-flyout-menu cursor-pointer"
@@ -224,7 +225,6 @@ function DefaultNavbar({ routes, brand, transparent, light, action }) {
               >
                 {mobileNavbar ? <CloseIcon /> : <MenuIcon />}
               </Box>
-
               {/*  */}
               <Box
                 id="navbar"

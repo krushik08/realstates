@@ -9,6 +9,9 @@ import Icon from '@mui/material/Icon';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 import { Box, Typography, useTheme } from '@mui/material';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import SearchIcon from '@mui/icons-material/Search';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 function DefaultNavbarDropdown({
   name,
@@ -35,7 +38,10 @@ function DefaultNavbarDropdown({
         {...(route && routeComponent)}
         className="menu-item menu-item-type-post_type menu-item-object-page nav-item "
       >
-        <Link className="nav-link text-capitalize dropdown-toggle" to="/">
+        <Link
+          className="nav-link text-capitalize dropdown-toggle"
+          to={!collapse && route}
+        >
           {name}
           {collapse && (
             <KeyboardArrowDownIcon
@@ -45,6 +51,9 @@ function DefaultNavbarDropdown({
               }}
             />
           )}
+          {icon === 'search' && <SearchIcon />}
+          {icon === 'cart' && <ShoppingCartIcon />}
+          {icon === 'instagram' && <InstagramIcon />}
         </Link>
       </li>
     </>

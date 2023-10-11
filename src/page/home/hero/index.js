@@ -29,11 +29,11 @@ const Hero = () => {
                 </Typography>
 
                 <Box className="button-group">
-                  <Link to="/" className="btn creamy">
+                  <Link to="/shop" className="btn creamy">
                     Shop All
                   </Link>
 
-                  <Link to="/" className="btn outline white-outline">
+                  <Link to="/communities" className="btn outline white-outline">
                     Shop by Community
                   </Link>
                 </Box>

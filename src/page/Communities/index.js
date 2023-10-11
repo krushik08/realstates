@@ -1,8 +1,10 @@
 import React from 'react';
+import Banner from '../../components/Banner';
+import TagCard from '../../components/Card/TagCard';
 import { Box, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
-import Title from '../ProductShowcase/title';
-import TagCard from '../Card/TagCard';
+import { Title } from '@mui/icons-material';
+
 const TagList = [
   {
     name: 'Fawn Island',
@@ -29,35 +31,23 @@ const TagList = [
       'https://mleo653n2p4x.i.optimole.com/w:1024/h:683/q:mauto/f:avif/https://thecottageco.com/wp-content/uploads/2023/06/Grand-Cove-MHC-Grand-Bend-ON-Aerial-6.jpeg',
   },
 ];
-const TagShowcase = () => {
+
+const Communities = () => {
   return (
     <>
-      <Box className="tag-showcase">
+      <Banner />
+      <section className="community-grid v1-p-t">
         <Box className="container">
-          <Box className="row intro-row">
-            <Box className="col-12 intro-col">
-              <Typography className="section-title">
-                {' '}
-                <Title title="Cottage Communities" />
-              </Typography>
-
-              <Link className="btn outline" to="/">
-                {' '}
-                View All{' '}
-              </Link>
-            </Box>
-          </Box>
-          <Box className="row tag-row">
+          <Box className="row">
             {TagList.map((item) => (
-              <Box className="col-12 col-sm-6 col-lg-3 tag-col">
+              <Box className="col-12 col-sm-6 col-md-4 community-tile-col">
                 <TagCard tag={item} />
               </Box>
             ))}
           </Box>
         </Box>
-      </Box>
+      </section>
     </>
   );
 };
-
-export default TagShowcase;
+export default Communities;
